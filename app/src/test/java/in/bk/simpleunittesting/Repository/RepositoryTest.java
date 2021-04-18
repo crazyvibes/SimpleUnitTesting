@@ -27,16 +27,16 @@ public class RepositoryTest {
     Repository repository;
 
     @Rule
-    public InstantTaskExecutorRule instantTaskExecutorRule=new InstantTaskExecutorRule();//help to run synchronously
+    public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();//help to run synchronously
 
     @Before
     public void setUp() throws Exception {
         //repository=Mockito.mock(Repository.class); //initializing for mock
-        repository=Mockito.spy(Repository.class);//initializing for spy
+        repository = Mockito.spy(Repository.class);//initializing for spy
     }
 
     @Test
-    public void getData(){
+    public void getData() {
 
         //with fake object
 //        MutableLiveData<String> dummyLiveData=new MutableLiveData<>();
@@ -45,22 +45,20 @@ public class RepositoryTest {
 //        System.out.println(dummyLiveData.getValue());
 
         //with real object
-        doReturn(repository.getLiveData("Bkm","123")).when(repository).getLiveData("Bkm","123");
+        doReturn(repository.getLiveData("Bkm", "123")).when(repository).getLiveData("Bkm", "123");
         System.out.println(repository.liveData.getValue());
 
 
-
-       // when(repository.getData()).thenReturn("Hi this  is test.");//this is for mock, generating dummy return type
-      //  doReturn(repository.getData()).when(repository).getData();//this is for spy, getting actual return type
-       // System.out.println(repository.getData());
+        // when(repository.getData()).thenReturn("Hi this  is test.");//this is for mock, generating dummy return type
+        //  doReturn(repository.getData()).when(repository).getData();//this is for spy, getting actual return type
+        // System.out.println(repository.getData());
     }
 
 
-
     @Test
-    public void getData2(){
+    public void getData2() {
         //for void return type
-      //  doNothing().when(repository).getData2("Bk","123456");
+        //  doNothing().when(repository).getData2("Bk","123456");
 
 
     }
